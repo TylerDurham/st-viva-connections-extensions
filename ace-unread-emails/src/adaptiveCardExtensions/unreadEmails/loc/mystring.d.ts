@@ -1,3 +1,5 @@
+
+
 declare interface IUnreadEmailsAdaptiveCardExtensionStrings {
   PropertyPaneDescription: string;
   TitleFieldLabel: string;
@@ -6,6 +8,15 @@ declare interface IUnreadEmailsAdaptiveCardExtensionStrings {
   PrimaryText: string;
   Description: string;
   QuickViewButton: string;
+
+  ButtonTitle: string;
+  ButtonTarget: string;
+
+  Loading: IPrimaryTextCardParameters;
+  NoUnread: IPrimaryTextCardParameters;
+  Unread: IPrimaryTextCardParameters;
+  LargeUnread: IPrimaryTextCardParameters;
+  Error: IPrimaryTextCardParameters;
 }
 
 declare module 'UnreadEmailsAdaptiveCardExtensionStrings' {

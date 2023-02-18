@@ -16,11 +16,11 @@
   "preconfiguredEntries": [{
     "groupId": "bd067b1e-3ad5-4d5d-a5fe-505f07d7f59c", // Dashboard
     "group": { "default": "Dashboard" },
-    "title": { "default": "UnreadEmails" },
+    "title": { "default": "Unread Emails" },
     "description": { "default": "UnreadEmails description" },
-    "officeFabricIconFontName": "SharePointLogo",
+    "officeFabricIconFontName": "OutlookLogo",
     "properties": {
-      "title": "UnreadEmails"
+      "title": "Unread Emails"
     },
     "cardSize": "Medium"
   }]

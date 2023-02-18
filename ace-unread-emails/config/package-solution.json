@@ -14,6 +14,12 @@
       "termsOfUseUrl": "",
       "mpnId": "Undefined-1.16.1"
     },
+    "webApiPermissionRequests": [
+      {
+        "resource": "Microsoft Graph",
+        "scope": "Mail.ReadBasic"
+      }
+    ],
     "metadata": {
       "shortDescription": {
         "default": "ace-unread-emails description"

@@ -6,17 +6,17 @@ import {
   ICardButton
 } from '@microsoft/sp-adaptive-card-extension-base';
 import * as strings from 'UnreadEmailsAdaptiveCardExtensionStrings';
-import { IUnreadEmailsAdaptiveCardExtensionProps, IUnreadEmailsAdaptiveCardExtensionState, QUICK_VIEW_REGISTRY_ID } from '../UnreadEmailsAdaptiveCardExtension';
+import { IUnreadEmailsAdaptiveCardExtensionProps, IUnreadEmailsAdaptiveCardExtensionState } from '../UnreadEmailsAdaptiveCardExtension';
 
 export class CardView extends BasePrimaryTextCardView<IUnreadEmailsAdaptiveCardExtensionProps, IUnreadEmailsAdaptiveCardExtensionState> {
   public get cardButtons(): [ICardButton] | [ICardButton, ICardButton] | undefined {
     return [
       {
-        title: strings.QuickViewButton,
+        title: strings.ButtonTitle,
         action: {
-          type: 'QuickView',
+          type: 'ExternalLink',
           parameters: {
-            view: QUICK_VIEW_REGISTRY_ID
+            target: strings.ButtonTarget
           }
         }
       }
@@ -25,7 +25,7 @@ export class CardView extends BasePrimaryTextCardView<IUnreadEmailsAdaptiveCardE
 
   public get data(): IPrimaryTextCardParameters {
     return {
-      primaryText: strings.PrimaryText,
+      primaryText: `${this.state.results?.unreadItemCount} Unread Emails`, //  strings.PrimaryText,
       description: strings.Description,
       title: this.properties.title
     };
@@ -35,7 +35,7 @@ export class CardView extends BasePrimaryTextCardView<IUnreadEmailsAdaptiveCardE
     return {
       type: 'ExternalLink',
       parameters: {
-        target: 'https://www.bing.com'
+        target: strings.ButtonTarget
       }
     };
   }
