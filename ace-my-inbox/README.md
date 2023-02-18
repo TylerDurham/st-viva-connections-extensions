@@ -1,4 +1,4 @@
-# ace-unread-emails
+# ace-my-inbox
 
 ## Summary
 

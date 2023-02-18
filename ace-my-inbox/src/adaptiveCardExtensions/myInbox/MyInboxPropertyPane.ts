@@ -1,5 +1,5 @@
 import { IPropertyPaneConfiguration, PropertyPaneTextField } from '@microsoft/sp-property-pane';
-import * as strings from 'UnreadEmailsAdaptiveCardExtensionStrings';
+import * as strings from 'MyInboxAdaptiveCardExtensionStrings';
 
 export class UnreadEmailsPropertyPane {
   public getPropertyPaneConfiguration(): IPropertyPaneConfiguration {

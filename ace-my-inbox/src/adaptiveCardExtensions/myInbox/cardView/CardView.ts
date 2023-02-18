@@ -5,10 +5,10 @@ import {
   IQuickViewCardAction,
   ICardButton
 } from '@microsoft/sp-adaptive-card-extension-base';
-import * as strings from 'UnreadEmailsAdaptiveCardExtensionStrings';
-import { IUnreadEmailsAdaptiveCardExtensionProps, IUnreadEmailsAdaptiveCardExtensionState } from '../UnreadEmailsAdaptiveCardExtension';
+import * as strings from 'MyInboxAdaptiveCardExtensionStrings';
+import { IMyInboxAdaptiveCardExtensionProps, IMyInboxAdaptiveCardExtensionState } from '../MyInboxAdaptiveCardExtension';
 
-export class CardView extends BasePrimaryTextCardView<IUnreadEmailsAdaptiveCardExtensionProps, IUnreadEmailsAdaptiveCardExtensionState> {
+export class CardView extends BasePrimaryTextCardView<IMyInboxAdaptiveCardExtensionProps, IMyInboxAdaptiveCardExtensionState> {
   public get cardButtons(): [ICardButton] | [ICardButton, ICardButton] | undefined {
     return [
       {

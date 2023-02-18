@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
   "solution": {
-    "name": "ace-unread-emails-client-side-solution",
+    "name": "ace-my-inbox-client-side-solution",
     "id": "3abefdd3-ded3-4ae2-be6b-1e619cf12782",
     "version": "1.0.0.0",
     "includeClientSideAssets": true,
@@ -22,10 +22,10 @@
     ],
     "metadata": {
       "shortDescription": {
-        "default": "ace-unread-emails description"
+        "default": "ace-my-inbox description"
       },
       "longDescription": {
-        "default": "ace-unread-emails description"
+        "default": "ace-my-inbox description"
       },
       "screenshotPaths": [],
       "videoUrl": "",
@@ -33,14 +33,14 @@
     },
     "features": [
       {
-        "title": "ace-unread-emails Feature",
-        "description": "The feature that activates elements of the ace-unread-emails solution.",
+        "title": "ace-my-inbox Feature",
+        "description": "The feature that activates elements of the ace-my-inbox solution.",
         "id": "f7b815d5-a02c-459c-b41b-f064ac5146d3",
         "version": "1.0.0.0"
       }
     ]
   },
   "paths": {
-    "zippedPackage": "solution/ace-unread-emails.sppkg"
+    "zippedPackage": "solution/ace-my-inbox.sppkg"
   }
 }

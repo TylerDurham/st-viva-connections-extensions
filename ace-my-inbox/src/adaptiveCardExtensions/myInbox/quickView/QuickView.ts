@@ -1,6 +1,6 @@
 import { ISPFxAdaptiveCard, BaseAdaptiveCardView } from '@microsoft/sp-adaptive-card-extension-base';
-import * as strings from 'UnreadEmailsAdaptiveCardExtensionStrings';
-import { IUnreadEmailsAdaptiveCardExtensionProps, IUnreadEmailsAdaptiveCardExtensionState } from '../UnreadEmailsAdaptiveCardExtension';
+import * as strings from 'MyInboxAdaptiveCardExtensionStrings';
+import { IMyInboxAdaptiveCardExtensionProps, IMyInboxAdaptiveCardExtensionState } from '../MyInboxAdaptiveCardExtension';
 
 export interface IQuickViewData {
   subTitle: string;
@@ -8,8 +8,8 @@ export interface IQuickViewData {
 }
 
 export class QuickView extends BaseAdaptiveCardView<
-  IUnreadEmailsAdaptiveCardExtensionProps,
-  IUnreadEmailsAdaptiveCardExtensionState,
+  IMyInboxAdaptiveCardExtensionProps,
+  IMyInboxAdaptiveCardExtensionState,
   IQuickViewData
 > {
   public get data(): IQuickViewData {

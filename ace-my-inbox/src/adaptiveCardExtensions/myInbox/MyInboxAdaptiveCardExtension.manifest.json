@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx/adaptive-card-extension-manifest.schema.json",
   "id": "71e39033-1460-4b8c-8935-c9df9f1f851f",
-  "alias": "UnreadEmailsAdaptiveCardExtension",
+  "alias": "MyInboxAdaptiveCardExtension",
   "componentType": "AdaptiveCardExtension",
 
   // The "*" signifies that the version should be taken from the package.json
@@ -16,11 +16,11 @@
   "preconfiguredEntries": [{
     "groupId": "bd067b1e-3ad5-4d5d-a5fe-505f07d7f59c", // Dashboard
     "group": { "default": "Dashboard" },
-    "title": { "default": "Unread Emails" },
+    "title": { "default": "My Inbox" },
     "description": { "default": "UnreadEmails description" },
     "officeFabricIconFontName": "OutlookLogo",
     "properties": {
-      "title": "Unread Emails"
+      "title": "My Inbox"
     },
     "cardSize": "Medium"
   }]

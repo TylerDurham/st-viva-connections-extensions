@@ -2,15 +2,15 @@ import { IPropertyPaneConfiguration } from '@microsoft/sp-property-pane';
 import { BaseAdaptiveCardExtension } from '@microsoft/sp-adaptive-card-extension-base';
 import { CardView } from './cardView/CardView';
 import { QuickView } from './quickView/QuickView';
-import { UnreadEmailsPropertyPane } from './UnreadEmailsPropertyPane';
+import { UnreadEmailsPropertyPane } from './MyInboxPropertyPane';
 import * as MicrosoftGraph from '@microsoft/microsoft-graph-types';
 import { MSGraphClientV3 } from '@microsoft/sp-http';
 
-export interface IUnreadEmailsAdaptiveCardExtensionProps {
+export interface IMyInboxAdaptiveCardExtensionProps {
   title: string;
 }
 
-export interface IUnreadEmailsAdaptiveCardExtensionState {
+export interface IMyInboxAdaptiveCardExtensionState {
   results?: MicrosoftGraph.MailFolder;
   error?: GraphError;
 }
@@ -28,8 +28,8 @@ const CARD_VIEW_REGISTRY_ID: string = 'UnreadEmails_CARD_VIEW';
 export const QUICK_VIEW_REGISTRY_ID: string = 'UnreadEmails_QUICK_VIEW';
 
 export default class UnreadEmailsAdaptiveCardExtension extends BaseAdaptiveCardExtension<
-  IUnreadEmailsAdaptiveCardExtensionProps,
-  IUnreadEmailsAdaptiveCardExtensionState
+  IMyInboxAdaptiveCardExtensionProps,
+  IMyInboxAdaptiveCardExtensionState
 > {
   private _deferredPropertyPane: UnreadEmailsPropertyPane | undefined;
 
@@ -59,7 +59,7 @@ export default class UnreadEmailsAdaptiveCardExtension extends BaseAdaptiveCardE
   protected loadPropertyPaneResources(): Promise<void> {
     return import(
       /* webpackChunkName: 'UnreadEmails-property-pane'*/
-      './UnreadEmailsPropertyPane'
+      './MyInboxPropertyPane'
     )
       .then(
         (component) => {

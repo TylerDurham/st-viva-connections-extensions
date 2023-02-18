@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "my-inbox-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/myInbox/MyInboxAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/myInbox/MyInboxAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "MyInboxAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/myInbox/loc/{locale}.js"
+  }
+}

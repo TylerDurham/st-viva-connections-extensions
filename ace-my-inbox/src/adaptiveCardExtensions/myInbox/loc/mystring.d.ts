@@ -1,6 +1,6 @@
 
 
-declare interface IUnreadEmailsAdaptiveCardExtensionStrings {
+declare interface IMyInboxAdaptiveCardExtensionStrings {
   PropertyPaneDescription: string;
   TitleFieldLabel: string;
   Title: string;
@@ -19,7 +19,7 @@ declare interface IUnreadEmailsAdaptiveCardExtensionStrings {
   Error: IPrimaryTextCardParameters;
 }
 
-declare module 'UnreadEmailsAdaptiveCardExtensionStrings' {
-  const strings: IUnreadEmailsAdaptiveCardExtensionStrings;
+declare module 'MyInboxAdaptiveCardExtensionStrings' {
+  const strings: IMyInboxAdaptiveCardExtensionStrings;
   export = strings;
 }
