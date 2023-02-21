@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "my-recent-docs-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/myRecentDocs/MyRecentDocsAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/myRecentDocs/MyRecentDocsAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "MyRecentDocsAdaptiveCardExtensionStrings": "lib/adaptiveCardExtensions/myRecentDocs/loc/{locale}.js"
+  }
+}

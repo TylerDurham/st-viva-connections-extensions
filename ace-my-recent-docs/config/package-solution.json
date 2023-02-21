@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "ace-my-recent-docs-client-side-solution",
+    "id": "c5e2a530-2eb4-4c48-8512-31129100030b",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.16.1"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "ace-my-recent-docs description"
+      },
+      "longDescription": {
+        "default": "ace-my-recent-docs description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "ace-my-recent-docs Feature",
+        "description": "The feature that activates elements of the ace-my-recent-docs solution.",
+        "id": "7a295901-2cf5-45d6-9b60-accfb7d10c56",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/ace-my-recent-docs.sppkg"
+  }
+}

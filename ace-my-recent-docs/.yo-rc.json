@@ -1,0 +1,22 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "16.19.0",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.4.1"
+    },
+    "version": "1.16.1",
+    "libraryName": "ace-my-recent-docs",
+    "libraryId": "c5e2a530-2eb4-4c48-8512-31129100030b",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "ace-my-recent-docs",
+    "solutionShortDescription": "ace-my-recent-docs description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "adaptiveCardExtension",
+    "aceTemplateType": "PrimaryText"
+  }
+}
