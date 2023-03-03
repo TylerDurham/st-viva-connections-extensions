@@ -1,11 +1,17 @@
-define([], function() {
+define([], function () {
   return {
-    "PropertyPaneDescription": "Write 1-3 sentences describing the functionality of this component.",
-    "TitleFieldLabel": "Card title",
+
     "Title": "Adaptive Card Extension",
     "SubTitle": "Quick view",
-    "PrimaryText": "SPFx Adaptive Card Extension",
+    "PrimaryText": "Swiftly get your work done.",
     "Description": "Create your SPFx Adaptive Card Extension solution!",
-    "QuickViewButton": "Quick view"
+    "QuickViewButton": "Quick view",
+    "PropertyPane": {
+      "TitleFieldLabel": "Card title",
+      "TitleFieldDescription": "Specify a title for this card.",
+      "ListNameFieldLabel": "SharePoint List",
+      "ListNameFieldDescription": "Specify the SharePoint list.",
+      "DescriptionLabel": "Wicked cool ACE component."
+    }
   }
 });

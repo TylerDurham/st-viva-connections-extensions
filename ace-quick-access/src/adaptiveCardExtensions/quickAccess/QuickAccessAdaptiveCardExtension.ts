@@ -3,9 +3,11 @@ import { BaseAdaptiveCardExtension } from '@microsoft/sp-adaptive-card-extension
 import { CardView } from './cardView/CardView';
 import { QuickView } from './quickView/QuickView';
 import { QuickAccessPropertyPane } from './QuickAccessPropertyPane';
+import { fetchListItems, fetchLists } from './sp.service';
 
 export interface IQuickAccessAdaptiveCardExtensionProps {
   title: string;
+  listId: string;
 }
 
 export interface IQuickAccessAdaptiveCardExtensionState {
@@ -20,7 +22,13 @@ export default class QuickAccessAdaptiveCardExtension extends BaseAdaptiveCardEx
 > {
   private _deferredPropertyPane: QuickAccessPropertyPane | undefined;
 
-  public onInit(): Promise<void> {
+  public async onInit(): Promise<void> {
+
+    console.log(this.properties);
+    const listItems = await fetchListItems(this.context, this.properties.listId);
+    console.log(listItems)
+
+
     this.state = { };
 
     this.cardNavigator.register(CARD_VIEW_REGISTRY_ID, () => new CardView());
@@ -29,14 +37,18 @@ export default class QuickAccessAdaptiveCardExtension extends BaseAdaptiveCardEx
     return Promise.resolve();
   }
 
-  protected loadPropertyPaneResources(): Promise<void> {
+  protected async loadPropertyPaneResources(): Promise<void> {
+
+    let lists = await fetchLists(this.context);
+    console.log(lists);
+
     return import(
       /* webpackChunkName: 'QuickAccess-property-pane'*/
       './QuickAccessPropertyPane'
     )
       .then(
         (component) => {
-          this._deferredPropertyPane = new component.QuickAccessPropertyPane();
+          this._deferredPropertyPane = new component.QuickAccessPropertyPane(lists);
         }
       );
   }
