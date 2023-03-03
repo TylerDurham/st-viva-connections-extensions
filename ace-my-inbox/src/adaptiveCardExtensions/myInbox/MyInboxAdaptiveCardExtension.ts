@@ -6,22 +6,15 @@ import { UnreadEmailsPropertyPane } from './MyInboxPropertyPane';
 import * as MicrosoftGraph from '@microsoft/microsoft-graph-types';
 import { MSGraphClientV3 } from '@microsoft/sp-http';
 
+import * as core from "../../../../st-vce-shared"
+
 export interface IMyInboxAdaptiveCardExtensionProps {
   title: string;
 }
 
 export interface IMyInboxAdaptiveCardExtensionState {
   results?: MicrosoftGraph.MailFolder;
-  error?: GraphError;
-}
-
-export interface GraphError {
-  statusCode?: number;
-  code?: string;
-  message: string;
-  requestId?: string;
-  date?: Date;
-  body?: string;
+  error?: core.interfaces.IGraphError;
 }
 
 const CARD_VIEW_REGISTRY_ID: string = 'UnreadEmails_CARD_VIEW';
@@ -39,8 +32,10 @@ export default class UnreadEmailsAdaptiveCardExtension extends BaseAdaptiveCardE
     this.cardNavigator.register(CARD_VIEW_REGISTRY_ID, () => new CardView());
     this.quickViewNavigator.register(QUICK_VIEW_REGISTRY_ID, () => new QuickView());
 
+    console.log(core.HELLO)
+
     this.context.msGraphClientFactory.getClient("3").then((client: MSGraphClientV3): void => {
-      client.api("/me/mailfolders/Inbox").select("unreadItemCount").get((error: GraphError, inbox: MicrosoftGraph.MailFolder) => {
+      client.api("/me/mailfolders/Inbox").select("unreadItemCount").get((error: core.interfaces.IGraphError, inbox: MicrosoftGraph.MailFolder) => {
         console.log('test');
         if (error) {
           console.error(error)
