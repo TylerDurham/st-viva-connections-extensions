@@ -5,11 +5,12 @@ export interface IListItem {
     id: string;
     title: string;
     subTitle: string;
+    launchUrl: string;
     sortOrder: number;
-    thumbnailUrl: IThumbnailUrl;
+    thumbnail: IThumbnailInfo;
 }
 
-export interface IThumbnailUrl {
+export interface IThumbnailInfo {
     fileName: string;
     url: string;
 }
@@ -58,9 +59,10 @@ export const fetchListItems = async(context: AdaptiveCardExtensionContext, listI
         return <IListItem> {
             id: listItem.Id,
             title: listItem.Title,
+            launchUrl: listItem.LaunchURL.Url,
             subTitle: listItem.Subtitle,
             sortOrder: listItem.SortOrder,
-            thumbnailUrl: { fileName, url: `${serverUrl}${serverRelativeUrl}` }
+            thumbnail: { fileName, url: `${serverUrl}${serverRelativeUrl}` }
         }
     }));
 }

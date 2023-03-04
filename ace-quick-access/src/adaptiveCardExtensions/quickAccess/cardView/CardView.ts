@@ -1,14 +1,14 @@
 import {
-  BaseBasicCardView,
-  IBasicCardParameters,
   IExternalLinkCardAction,
   IQuickViewCardAction,
-  ICardButton
+  ICardButton,
+  BaseImageCardView,
+  IImageCardParameters
 } from '@microsoft/sp-adaptive-card-extension-base';
 import * as strings from 'QuickAccessAdaptiveCardExtensionStrings';
 import { IQuickAccessAdaptiveCardExtensionProps, IQuickAccessAdaptiveCardExtensionState, QUICK_VIEW_REGISTRY_ID } from '../QuickAccessAdaptiveCardExtension';
 
-export class CardView extends BaseBasicCardView<IQuickAccessAdaptiveCardExtensionProps, IQuickAccessAdaptiveCardExtensionState> {
+export class CardView extends BaseImageCardView<IQuickAccessAdaptiveCardExtensionProps, IQuickAccessAdaptiveCardExtensionState> {
   public get cardButtons(): [ICardButton] | [ICardButton, ICardButton] | undefined {
     return [
       {
@@ -23,18 +23,20 @@ export class CardView extends BaseBasicCardView<IQuickAccessAdaptiveCardExtensio
     ];
   }
 
-  public get data(): IBasicCardParameters {
+  public get data(): IImageCardParameters {
     return {
       primaryText: strings.PrimaryText,
-      title: this.properties.title
+      title: this.properties.title,
+      
+      imageUrl: "https://cdn.hubblecontent.osi.office.net/m365content/publish/dfce80bd-6716-4577-8550-c0d192776eb9/thumbnails/large.jpg?file=1226452601.jpg"
     };
   }
 
   public get onCardSelection(): IQuickViewCardAction | IExternalLinkCardAction | undefined {
     return {
-      type: 'ExternalLink',
+      type: 'QuickView',
       parameters: {
-        target: 'https://www.bing.com'
+        view: QUICK_VIEW_REGISTRY_ID
       }
     };
   }

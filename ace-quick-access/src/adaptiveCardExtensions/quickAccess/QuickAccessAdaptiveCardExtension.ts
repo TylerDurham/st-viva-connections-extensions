@@ -3,7 +3,7 @@ import { BaseAdaptiveCardExtension } from '@microsoft/sp-adaptive-card-extension
 import { CardView } from './cardView/CardView';
 import { QuickView } from './quickView/QuickView';
 import { QuickAccessPropertyPane } from './QuickAccessPropertyPane';
-import { fetchListItems, fetchLists } from './sp.service';
+import { fetchListItems, fetchLists, IListItem } from './sp.service';
 
 export interface IQuickAccessAdaptiveCardExtensionProps {
   title: string;
@@ -11,6 +11,7 @@ export interface IQuickAccessAdaptiveCardExtensionProps {
 }
 
 export interface IQuickAccessAdaptiveCardExtensionState {
+  listItems: IListItem[];
 }
 
 const CARD_VIEW_REGISTRY_ID: string = 'QuickAccess_CARD_VIEW';
@@ -26,10 +27,8 @@ export default class QuickAccessAdaptiveCardExtension extends BaseAdaptiveCardEx
 
     console.log(this.properties);
     const listItems = await fetchListItems(this.context, this.properties.listId);
-    console.log(listItems)
 
-
-    this.state = { };
+    this.state = { listItems };
 
     this.cardNavigator.register(CARD_VIEW_REGISTRY_ID, () => new CardView());
     this.quickViewNavigator.register(QUICK_VIEW_REGISTRY_ID, () => new QuickView());
