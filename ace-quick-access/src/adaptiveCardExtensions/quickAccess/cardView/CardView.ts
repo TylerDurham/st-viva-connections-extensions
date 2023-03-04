@@ -12,7 +12,7 @@ export class CardView extends BaseImageCardView<IQuickAccessAdaptiveCardExtensio
   public get cardButtons(): [ICardButton] | [ICardButton, ICardButton] | undefined {
     return [
       {
-        title: strings.QuickViewButton,
+        title: strings.QuickView.ButtonText,
         action: {
           type: 'QuickView',
           parameters: {

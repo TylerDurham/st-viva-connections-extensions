@@ -4,7 +4,6 @@ import { IQuickAccessAdaptiveCardExtensionProps, IQuickAccessAdaptiveCardExtensi
 import { IListItem } from '../sp.service';
 
 export interface IQuickViewData {
-  subTitle: string;
   title: string;
   listItems: IListItem[];
 }
@@ -16,8 +15,7 @@ export class QuickView extends BaseAdaptiveCardView<
 > {
   public get data(): IQuickViewData {
     const ret =  {
-      subTitle: strings.SubTitle,
-      title: strings.Title,
+      title: (this.state.listItems.length > 0) ? strings.QuickView.Title : strings.QuickView.ErrNoConfiguredList,
       listItems: this.state.listItems
     };
     console.log(ret)

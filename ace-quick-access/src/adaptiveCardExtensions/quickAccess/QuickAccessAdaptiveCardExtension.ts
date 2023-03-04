@@ -25,8 +25,11 @@ export default class QuickAccessAdaptiveCardExtension extends BaseAdaptiveCardEx
 
   public async onInit(): Promise<void> {
 
-    console.log(this.properties);
-    const listItems = await fetchListItems(this.context, this.properties.listId);
+    let listItems = [];
+    
+    if (undefined !== this.properties.listId) {
+      listItems = await fetchListItems(this.context, this.properties.listId);
+    }
 
     this.state = { listItems };
 
@@ -38,8 +41,9 @@ export default class QuickAccessAdaptiveCardExtension extends BaseAdaptiveCardEx
 
   protected async loadPropertyPaneResources(): Promise<void> {
 
-    let lists = await fetchLists(this.context);
-    console.log(lists);
+    const lists = (await fetchLists(this.context)).filter((list) => {
+      return list.hidden === false;
+    });
 
     return import(
       /* webpackChunkName: 'QuickAccess-property-pane'*/
@@ -54,6 +58,17 @@ export default class QuickAccessAdaptiveCardExtension extends BaseAdaptiveCardEx
 
   protected renderCard(): string | undefined {
     return CARD_VIEW_REGISTRY_ID;
+  }
+
+  protected onPropertyPaneFieldChanged(propertyPath: string, oldValue: any, newValue: any): void {
+    super.onPropertyPaneFieldChanged(propertyPath, oldValue, newValue)
+
+    if(propertyPath === "listId" && newValue) {
+      fetchListItems(this.context, this.properties.listId)
+        .then((listItems) => {
+          this.setState({listItems});
+        })
+    }    
   }
 
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {

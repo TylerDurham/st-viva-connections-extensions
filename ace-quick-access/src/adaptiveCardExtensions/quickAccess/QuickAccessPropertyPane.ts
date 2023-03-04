@@ -6,9 +6,8 @@ export class QuickAccessPropertyPane {
   constructor(lists: IList[]) {
     this._lists = lists;
   }
-
   
-  private _lists : IList[];
+  private _lists : IList[] = [];
   
 
   public getPropertyPaneConfiguration(): IPropertyPaneConfiguration {

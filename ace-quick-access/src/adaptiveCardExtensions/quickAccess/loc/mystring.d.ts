@@ -5,7 +5,7 @@ declare interface IQuickAccessAdaptiveCardExtensionStrings {
   SubTitle: string;
   PrimaryText: string;
   Description: string;
-  QuickViewButton: string;
+  QuickView: IQuickAccessAdaptiveCardExtensionQuickViewStrings;
   PropertyPane: IQuickAccessAdaptiveCardExtensionPropertyPaneStrings;
 }
 
@@ -15,6 +15,12 @@ declare interface IQuickAccessAdaptiveCardExtensionPropertyPaneStrings {
   ListNameFieldLabel: string;
   ListNameFieldDescription: string;
   DescriptionLabel: string;
+}
+
+declare interface IQuickAccessAdaptiveCardExtensionQuickViewStrings {
+  Title: string;
+  ButtonText: string;
+  ErrNoConfiguredList: string;
 }
 
 declare module 'QuickAccessAdaptiveCardExtensionStrings' {

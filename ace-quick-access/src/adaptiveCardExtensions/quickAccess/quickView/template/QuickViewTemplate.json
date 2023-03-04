@@ -4,6 +4,11 @@
   "version": "1.5",
   "body": [
     {
+      "type": "TextBlock",
+      "text": "${title}",
+      "wrap": true
+    },
+    {
       "type": "Container",
       "$data": "${listItems}",
       "items": [
