@@ -23,11 +23,25 @@ Short summary on functionality and used technologies.
 
 ## Installation
 
-### Install the Solution Package
+# Install the Solution Package
 
-### Create the Quick Access Links List
+## Create the Quick Access Links List
 
-You can create the SharePoint list manually if needed, but it is recommended to use the [Create-List.ps1](https://github.com/TylerDurham/st-viva-connections-extensions/blob/master/ace-quick-access/sharepoint/Create-List.ps1) PowerShell script. Make sure you create the columns *exactly* as specified in the table below.
+### Create the Quick Access Links List using Powerhell
+
+**Before you Begin**
+- Ensure you have [PnP.PowerShell](https://pnp.github.io/powershell/articles/installation.html) installed.
+- Download the [Create-List.ps1](https://github.com/TylerDurham/st-viva-connections-extensions/blob/master/ace-quick-access/sharepoint/Create-List.ps1) script to your local machine.
+
+Navigate to the folder you downloaded [Create-List.ps1] and run the following command:
+
+```
+.\Create-List.ps1 -SiteURL <your-site-url>
+```
+
+### Create the Quick Access Links List Manually
+
+You can create the SharePoint list manually if needed, but it is recommended to use the [Create-List.ps1] PowerShell script. Make sure you create the columns *exactly* as specified in the table below.
 
 | Column        | Type                    | Notes                                         |
 | -----------   | -------------------     | --------------------------------------------- |
@@ -91,4 +105,4 @@ This extension illustrates the following concepts:
 - [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
 - [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
 
-- [Create-List.ps1](https://github.com/TylerDurham/st-viva-connections-extensions/blob/master/ace-quick-access/sharepoint/Create-List.ps1)
+[Create-List.ps1]: https://github.com/TylerDurham/st-viva-connections-extensions/blob/master/ace-quick-access/sharepoint/Create-List.ps1
