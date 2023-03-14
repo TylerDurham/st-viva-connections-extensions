@@ -23,7 +23,7 @@ export interface IList {
     hidden: boolean;
 }
 
-export const fetchListTitle = async (spContext: AdaptiveCardExtensionContext, listId: string) => {
+export const fetchListTitle = async (spContext: AdaptiveCardExtensionContext, listId: string): Promise<string> => {
     if (!listId) { return Promise.reject("Please specify a listId!"); }
 
     const response = await (await spContext.spHttpClient.get(
