@@ -43,18 +43,18 @@ Connect-PnPOnline -Url <your-site-url> -UseWebLogin
 ### Create the Quick Access Links List Manually
 
 <ol>
-<li>Open Microsoft Lists</li>
-<li>Under *Create a List*, select *Blank List*.</li>
+  <li>Open Microsoft Lists</li>
+  <li>Under *Create a List*, select *Blank List*.</li>
 </ol>
 
 You can create the SharePoint list manually if needed, but it is recommended to use the [Create-List.ps1] PowerShell script. Make sure you create the columns *exactly* as specified in the table below.
 
 | Column        | Type                    | Notes                                         |
 | -----------   | -------------------     | --------------------------------------------- |
-| Title         | Single Line of Text     | The title of the link. You won't need to create this, as SharePoint creates a *Title* column by default. Just insure it's there.
-| Subtitle      | Single Line of Text     | The subtitle of the link. Can be used as a "call to action". |
+| Title         | Single Line of Text     | The title of the link. You won't need to create this, as SharePoint creates a *Title* column by default. Just insure it's there. |
 | Description   | Multiple Lines of Text  | A brief description of the link. |
-| LaunchURL     | Hyperlink or Picture    | The URL for the link. Make sure the format is "Hyperlink". |        
+| ActionText    | Single Line of Text     | The text for the "call to action". This text will appear in the action button. |
+| ActionURL     | Hyperlink or Picture    | The URL for the "call to action". This URL will be launced when the action button is clicked. Make sure the format is "Hyperlink" and NOT "picture". |        
 | ThumbnailURL  | Thumbnail               | A picture that will be used for the link. |     
 | SortOrder     | Number                  | The sort order for the link when displayed in the ACE. Sort order is descending. |
 
