@@ -33,12 +33,19 @@
               "wrap": true
             },
             {
+              "type": "TextBlock",
+              "horizontalAlignment": "center",
+              "text": "${description}",
+              "weight": "lighter",
+              "wrap": true
+            },
+            {
               "type": "ActionSet",
               "actions": [
                 {
                   "type": "Action.OpenUrl",
-                  "title": "${subTitle}",
-                  "url": "${LaunchUrl}"
+                  "title": "${actionText}",
+                  "url": "${actionUrl}"
                 }
               ]
             }

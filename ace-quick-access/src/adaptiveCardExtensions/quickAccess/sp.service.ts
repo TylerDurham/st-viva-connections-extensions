@@ -4,8 +4,9 @@ import { SPHttpClient } from '@microsoft/sp-http';
 export interface IListItem {
     id: string;
     title: string;
-    subTitle: string;
-    launchUrl: string;
+    actionText: string;
+    actionUrl: string;
+    description: string;
     sortOrder: number;
     thumbnail: IThumbnailInfo;
 }
@@ -67,9 +68,10 @@ export const fetchListItems = async (context: AdaptiveCardExtensionContext, list
         return <IListItem>{
             id: listItem.Id,
             title: listItem.Title,
-            launchUrl: listItem.LaunchURL.Url,
-            subTitle: listItem.Subtitle,
+            actionUrl: listItem.ActionURL.Url,
+            actionText: listItem.ActionText,
             sortOrder: listItem.SortOrder,
+            description: listItem.Description,
             thumbnail: { fileName, url: `${serverUrl}${serverRelativeUrl}` }
         }
     }));
