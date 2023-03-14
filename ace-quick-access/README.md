@@ -36,7 +36,8 @@ Short summary on functionality and used technologies.
 Navigate to the folder you downloaded [Create-List.ps1] and run the following command:
 
 ```
-.\Create-List.ps1 -SiteURL <your-site-url>
+Connect-PnPOnline -Url <your-site-url> -UseWebLogin
+.\Create-List.ps1 
 ```
 
 ### Create the Quick Access Links List Manually

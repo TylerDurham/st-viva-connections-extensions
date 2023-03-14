@@ -1,14 +1,9 @@
 
 Param (
-    [Parameter(Mandatory=$true)]
-    [string] $SiteURL,
-
     [switch] $Overwrite
 )
 
 $LIST_TITLE = "Quick Access Links"
-
-Connect-PnPOnline -Url $SiteURL -UseWebLogin
 
 if ( $Overwrite -eq $true ) {
     Write-Output "List exists... deleting."
@@ -21,17 +16,7 @@ if( $null -eq $list ) {
     $list = New-PnPList -Title $LIST_TITLE -Template GenericList
 } 
 
-# Subtitle
-$id = New-Guid
-$xml = '<Field ID="{' + $id + '}"
-        DisplayName="Subtitle"
-        Name="Subtitle"
-        Type="Text"
-        Required="FALSE"
-        Group="@ST Columns" 
-/>'
 
-Add-PnPFieldFromXml -List $list -FieldXml $xml
 
 # Description
 $id = New-Guid
@@ -45,13 +30,25 @@ $xml = '<Field ID="{' + $id + '}"
 
 Add-PnPFieldFromXml -List $list -FieldXml $xml
 
-# Launch URL
+# Action Text
+$id = New-Guid
+$xml = '<Field ID="{' + $id + '}"
+        DisplayName="Action Text"
+        Name="ActionText"
+        Type="Text"
+        Required="FALSE"
+        Group="@ST Columns" 
+/>'
+
+Add-PnPFieldFromXml -List $list -FieldXml $xml
+
+# Action URL
 $id = New-Guid
 $xml = '
 <Field ID="{' + $id + '}"
-        DisplayName="Launch URL"
+        DisplayName="Action URL"
         Format="Hyperlink"
-        Name="LaunchURL"
+        Name="ActionURL"
         Required="FALSE"
         Type="URL"
         Group="@ST Columns" 
@@ -93,4 +90,4 @@ Add-PnPFieldFromXml -List $list -FieldXml $xml
 # Add to default view
 
 $view = Get-PnPView -List $list | Where-Object { $_.DefaultView -eq $true }
-Set-PnPView -List $list -Identity $view.Id -Fields "Title", "Subtitle", "LaunchURL", "ThumbnailURL", "SortOrder"
+Set-PnPView -List $list -Identity $view.Id -Fields "Title", "Description", "ActionText", "ActionURL", "ThumbnailURL", "SortOrder"
