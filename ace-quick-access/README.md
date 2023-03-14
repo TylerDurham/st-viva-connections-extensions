@@ -41,6 +41,11 @@ Navigate to the folder you downloaded [Create-List.ps1] and run the following co
 
 ### Create the Quick Access Links List Manually
 
+<ol>
+<li>Open Microsoft Lists</li>
+<li>Under *Create a List*, select *Blank List*.</li>
+</ol>
+
 You can create the SharePoint list manually if needed, but it is recommended to use the [Create-List.ps1] PowerShell script. Make sure you create the columns *exactly* as specified in the table below.
 
 | Column        | Type                    | Notes                                         |

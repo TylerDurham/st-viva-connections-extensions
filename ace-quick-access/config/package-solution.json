@@ -3,7 +3,7 @@
   "solution": {
     "name": "ace-quick-access-client-side-solution",
     "id": "780eefca-d9f3-44ad-83dd-30c03ef50679",
-    "version": "1.0.0.0",
+    "version": "0.0.0.2",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
@@ -29,8 +29,8 @@
       {
         "title": "ace-quick-access Feature",
         "description": "The feature that activates elements of the ace-quick-access solution.",
-        "id": "ecb09593-9816-4209-b080-a6b624559fbe",
-        "version": "1.0.0.0"
+        "id": "9250e2fd-a13b-47e8-8280-9bc1c1ce1bf5",
+        "version": "0.0.0.1"
       }
     ]
   },
@@ -38,3 +38,4 @@
     "zippedPackage": "solution/ace-quick-access.sppkg"
   }
 }
+
