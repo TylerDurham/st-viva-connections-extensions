@@ -6,7 +6,9 @@ As a best practice, it is currently [recommended](https://learn.microsoft.com/en
 
 If you have lots of cards, or you are simply looking to "tidy up" your dashboard to make room for new cards, you can move simple cards into a SharePoint List and configure ```ACE QUick Access Links``` to retrieve items from that list and provides a menu of simple "sub-cards" when clicked.
 
-[TODO: picture of the solution in action]
+| ![Image of the Quick Access Adaptive Card Extension.](https://placehold.co/600x400?text=COMING+SOON) |
+| :-------------: |
+| The Quick Access Adaptive Card Extension. |
 
 Please Note: ACEs that contain complex, large, or fetch external data are not good candidates for this solution. Only simple cards can be leveraged within ```ACE Quick Access Links```.
 
@@ -22,20 +24,17 @@ The solution consists of two components: The *Quick Access Links Adaptive Card E
 
 This Adaptive Card Extension (ACE) provides the user interface and simple business logic required to render the initial card and links in the Viva Connections Dashboard.
 
+| ![Image of the Quick Access Adaptive Card Extension in the Viva Connections Dashboard.](https://placehold.co/600x400?text=COMING+SOON) |
+| :-------------: |
+| The Quick Access Adaptive Card Extension in the Viva Connections Dashboard.
+
 ## The Quick Access Links SharePoint List
 
 This SharePoint List stores the link data for and individual Quick Access Links Adaptive Card Extension instance. It contains columns for link title, subtitle, action button URL, action button text, sort order, and an image for the link.
 
-<table>
-<tr>
-  <td>
-    <img src="https://raw.githubusercontent.com/TylerDurham/st-viva-connections-extensions/master/ace-quick-access/sharepoint/assets/ace-splist1.png?token=GHSAT0AAAAAAB54CR6B3HJBDV5Q3YJJ46H4ZAUYOLA" />
-  </td>
-</tr>
-<tr>
-  <td>The Quick Access Links List in SharePoint Online.</td>
-</tr>
-</table>
+| ![Image of the Quick Access Links List in SharePoint.](https://raw.githubusercontent.com/TylerDurham/st-viva-connections-extensions/master/ace-quick-access/sharepoint/assets/ace-splist1.png)|
+| :--------------: |
+| The Quick Access Links List in SharePoint supplies the data to the Quick Access ACE. |
 
 # Installation
 
@@ -66,12 +65,6 @@ Installation of ```ACE Quick Access Links``` has the following steps:
 **NOTE:** You will need to be a member of the [SharePoint Site Collection Administrators Group](https://learn.microsoft.com/en-us/sharepoint/manage-site-collection-administrators) for your [Viva Connections Home Site](https://learn.microsoft.com/en-us/viva/connections/home-site-plan) to perform this step.
 
 At this point, you should have successfully installed the SharePoint Solution Package and created a Quick Access Links List in SharePoint.
-
-# Installation
-
-
-
-
 
 ## Install the Solution Package
 
