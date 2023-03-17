@@ -8,7 +8,7 @@ If you have lots of cards, or you are simply looking to "tidy up" your dashboard
 
 | <img alt="Image of the Quick Access Adaptive Card Extension." src="https://placehold.co/600x400?text=COMING+SOON" width="600" /> |
 | :-------------: |
-| The Quick Access Adaptive Card Extension. |
+| *The Quick Access Adaptive Card Extension.* |
 
 Please Note: ACEs that contain complex, large, or fetch external data are not good candidates for this solution. Only simple cards can be leveraged within ```ACE Quick Access Links```.
 
@@ -26,7 +26,7 @@ This Adaptive Card Extension (ACE) provides the user interface and simple busine
 
 | <img alt="Image of the Quick Access Adaptive Card Extension in the Viva Connections Dashboard" src="https://placehold.co/600x400?text=COMING+SOON" width="600" /> |
 | :-------------: |
-| The Quick Access Adaptive Card Extension in the Viva Connections Dashboard.
+| *The Quick Access Adaptive Card Extension in the Viva Connections Dashboard.* |
 
 ## The Quick Access Links SharePoint List
 
@@ -34,7 +34,7 @@ This SharePoint List stores the link data for and individual Quick Access Links 
 
 | <img alt="Image of the Quick Access Links List in SharePoint." src="https://raw.githubusercontent.com/TylerDurham/st-viva-connections-extensions/master/ace-quick-access/sharepoint/assets/ace-splist1.png" width="600" />|
 | :--------------: |
-| The Quick Access Links List in SharePoint supplies the data to the Quick Access ACE. |
+| *The Quick Access Links List in SharePoint supplies the data to the Quick Access ACE.* |
 
 # Installation
 
