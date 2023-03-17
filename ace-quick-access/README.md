@@ -24,7 +24,7 @@ The solution consists of two components: The *Quick Access Links Adaptive Card E
 
 This Adaptive Card Extension (ACE) provides the user interface and simple business logic required to render the initial card and links in the Viva Connections Dashboard.
 
-| ![Image of the Quick Access Adaptive Card Extension in the Viva Connections Dashboard.](https://placehold.co/600x400?text=COMING+SOON | width=600) |
+| <img alt="Image of the Quick Access Adaptive Card Extension in the Viva Connections Dashboard" src="https://placehold.co/600x400?text=COMING+SOON" width="600" /> |
 | :-------------: |
 | The Quick Access Adaptive Card Extension in the Viva Connections Dashboard.
 
@@ -32,7 +32,7 @@ This Adaptive Card Extension (ACE) provides the user interface and simple busine
 
 This SharePoint List stores the link data for and individual Quick Access Links Adaptive Card Extension instance. It contains columns for link title, subtitle, action button URL, action button text, sort order, and an image for the link.
 
-| ![Image of the Quick Access Links List in SharePoint.](https://raw.githubusercontent.com/TylerDurham/st-viva-connections-extensions/master/ace-quick-access/sharepoint/assets/ace-splist1.png | width=600)|
+| <img alt="Image of the Quick Access Links List in SharePoint." src="https://raw.githubusercontent.com/TylerDurham/st-viva-connections-extensions/master/ace-quick-access/sharepoint/assets/ace-splist1.png" width="600" />|
 | :--------------: |
 | The Quick Access Links List in SharePoint supplies the data to the Quick Access ACE. |
 
