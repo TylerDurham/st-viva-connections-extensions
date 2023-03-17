@@ -6,7 +6,7 @@ As a best practice, it is currently [recommended](https://learn.microsoft.com/en
 
 If you have lots of cards, or you are simply looking to "tidy up" your dashboard to make room for new cards, you can move simple cards into a SharePoint List and configure ```ACE QUick Access Links``` to retrieve items from that list and provides a menu of simple "sub-cards" when clicked.
 
-| ![Image of the Quick Access Adaptive Card Extension.](https://placehold.co/600x400?text=COMING+SOON | width=600) |
+| <img alt="Image of the Quick Access Adaptive Card Extension." src="https://placehold.co/600x400?text=COMING+SOON" width="600" /> |
 | :-------------: |
 | The Quick Access Adaptive Card Extension. |
 
