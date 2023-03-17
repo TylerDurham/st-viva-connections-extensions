@@ -1,5 +1,19 @@
 import { AdaptiveCardExtensionContext } from "@microsoft/sp-adaptive-card-extension-base";
 import { SPHttpClient } from '@microsoft/sp-http';
+import { logger } from "./constants";
+
+interface IResult {
+    value: IGenericListItem[] | undefined;
+    error?: ISPServiceError;
+}
+interface IGenericListItem {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    [key: string]: any;
+}
+interface ISPServiceError {
+    message: string;
+    code: string;
+}
 
 export interface IListItem {
     id: string;
@@ -31,6 +45,8 @@ export const fetchListTitle = async (spContext: AdaptiveCardExtensionContext, li
         SPHttpClient.configurations.v1
     )).json();
 
+    logger.debug("fetching list title", response);
+
     return Promise.resolve(response.title);
 }
 
@@ -41,6 +57,8 @@ export const fetchLists = async (context: AdaptiveCardExtensionContext): Promise
         SPHttpClient.configurations.v1
     )).json();
 
+    logger.debug("fetching lists", response);
+
     return Promise.resolve(response.value.map((list: any, index: number) => {
         return <IList>{
             id: list.Id,
@@ -48,7 +66,6 @@ export const fetchLists = async (context: AdaptiveCardExtensionContext): Promise
             hidden: list.Hidden,
             description: list.Description
         }
-
     }));
 }
 
@@ -58,22 +75,30 @@ export const fetchListItems = async (context: AdaptiveCardExtensionContext, list
         return Promise.reject("Please specify a listId!");
     }
 
-    const response = await (await context.spHttpClient.get(
-        `${context.pageContext.web.absoluteUrl}/_api/web/lists/GetByID('${listId}')/items`, //?$select=Id, Title, WebUrl`,
+    const response = await context.spHttpClient.get(
+        `${context.pageContext.web.absoluteUrl}/_api/web/lists/GetByID('${listId}')/items`,
         SPHttpClient.configurations.v1
-    )).json();
+    );
 
-    return Promise.resolve(response.value.map((listItem: any) => {
-        const { fileName, serverRelativeUrl, serverUrl } = JSON.parse(listItem.ThumbnailURL);
-        return <IListItem>{
-            id: listItem.Id,
-            title: listItem.Title,
-            actionUrl: listItem.ActionURL.Url,
-            actionText: listItem.ActionText,
-            sortOrder: listItem.SortOrder,
-            description: listItem.Description,
-            thumbnail: { fileName, url: `${serverUrl}${serverRelativeUrl}` }
-        }
-    }));
+    logger.debug("fetching list items", response);
+
+    const json: IResult = await response.json();
+
+    if (json.error) {
+        return Promise.reject(json.error);
+    } else {
+        return Promise.resolve(json.value.map((listItem: IGenericListItem) => {
+            const { fileName, serverRelativeUrl, serverUrl } = JSON.parse(listItem.ThumbnailURL);
+            return <IListItem>{
+                id: listItem.Id,
+                title: listItem.Title,
+                actionUrl: listItem.ActionURL.Url,
+                actionText: listItem.ActionText,
+                sortOrder: listItem.SortOrder,
+                description: listItem.Description,
+                thumbnail: { fileName, url: `${serverUrl}${serverRelativeUrl}` }
+            }
+        }));
+    }
 }
 

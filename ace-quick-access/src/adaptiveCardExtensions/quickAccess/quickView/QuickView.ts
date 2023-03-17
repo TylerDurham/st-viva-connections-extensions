@@ -1,5 +1,6 @@
 import { ISPFxAdaptiveCard, BaseAdaptiveCardView } from '@microsoft/sp-adaptive-card-extension-base';
 import * as strings from 'QuickAccessAdaptiveCardExtensionStrings';
+import { logger } from '../constants';
 import { IQuickAccessAdaptiveCardExtensionProps, IQuickAccessAdaptiveCardExtensionState } from '../QuickAccessAdaptiveCardExtension';
 import { IListItem } from '../sp.service';
 
@@ -14,12 +15,12 @@ export class QuickView extends BaseAdaptiveCardView<
   IQuickViewData
 > {
   public get data(): IQuickViewData {
-    const ret =  {
+    const data =  {
       title: (this.state.listItems.length > 0) ? strings.QuickView.Title : strings.QuickView.ErrNoConfiguredList,
       listItems: this.state.listItems
     };
-    console.log(ret)
-    return ret;
+    logger.debug("getting quickview data", data)
+    return data;
   }
 
   public get template(): ISPFxAdaptiveCard {

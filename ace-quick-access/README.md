@@ -1,33 +1,22 @@
-# ace-quick-access
+# ACE Quick Access Links
 
 ## Summary
 
-Short summary on functionality and used technologies.
+This Adaptive Card Extension (ACE) project came about after several customers wished to "tidy up" their dashboards by grouping common and related dashboard components into one component.
 
-[picture of the solution in action, if possible]
+[TODO: picture of the solution in action]
 
-## Used SharePoint Framework Version
+This ACE reads a set of information from a SharePoint list and provides a menu of cards when clicked.
 
-![version](https://img.shields.io/badge/version-1.16.1-green.svg)
 
-## Applies to
 
-- [SharePoint Framework](https://aka.ms/spfx)
-- [Microsoft 365 tenant](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
+# Installation
 
-> Get your own free development tenant by subscribing to [Microsoft 365 developer program](http://aka.ms/o365devprogram)
-
-## Prerequisites
-
-> Any special pre-requisites?
-
-## Installation
-
-# Install the Solution Package
+## Install the Solution Package
 
 ## Create the Quick Access Links List
 
-### Create the Quick Access Links List using Powerhell
+### Create the Quick Access Links List using Powershell
 
 **Before you Begin**
 - Ensure you have [PnP.PowerShell](https://pnp.github.io/powershell/articles/installation.html) installed.
@@ -38,6 +27,19 @@ Navigate to the folder you downloaded [Create-List.ps1] and run the following co
 ```
 Connect-PnPOnline -Url <your-site-url> -UseWebLogin
 .\Create-List.ps1 
+```
+
+If the list already exists, you will need to either 
+
+- Specify a new list name with the ```-ListName``` switch.
+
+```
+.\Create-List.ps1 -ListName <your-list-name>
+```
+
+- Specify the ```-Overwrite``` switch. **IMPORTANT!** THis will clobber the existing list.
+```
+.\Create-List.ps1 -Overwrite
 ```
 
 ### Create the Quick Access Links List Manually
@@ -76,6 +78,23 @@ You can create the SharePoint list manually if needed, but it is recommended to 
 **THIS CODE IS PROVIDED _AS IS_ WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
 ---
+
+# Developing Locally
+
+## Used SharePoint Framework Version
+
+![version](https://img.shields.io/badge/version-1.16.1-green.svg)
+
+## Applies to
+
+- [SharePoint Framework](https://aka.ms/spfx)
+- [Microsoft 365 tenant](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
+
+> Get your own free development tenant by subscribing to [Microsoft 365 developer program](http://aka.ms/o365devprogram)
+
+## Prerequisites
+
+> Any special pre-requisites?
 
 ## Minimal Path to Awesome
 

@@ -9,7 +9,6 @@ export class QuickAccessPropertyPane {
   
   private _lists : IList[] = [];
   
-
   public getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
 
     return {
