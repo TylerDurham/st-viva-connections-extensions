@@ -2,15 +2,67 @@
 
 ## Summary
 
-This Adaptive Card Extension (ACE) project came about after several customers wished to "tidy up" their dashboards by grouping common and related dashboard components into one component.
+As a best practice, it is currently [recommended](https://learn.microsoft.com/en-us/viva/connections/create-dashboard#edit-the-dashboard) to limit the number of Adaptive Card Extentions (ACE) to about 20 on the dashboard for the best viewing experience.
+
+If you have lots of cards, or you are simply looking to "tidy up" your dashboard to make room for new cards, you can move simple cards into a SharePoint List and configure ```ACE QUick Access Links``` to retrieve items from that list and provides a menu of simple "sub-cards" when clicked.
 
 [TODO: picture of the solution in action]
 
-This ACE reads a set of information from a SharePoint list and provides a menu of cards when clicked.
+Please Note: ACEs that contain complex, large, or fetch external data are not good candidates for this solution. Only simple cards can be leveraged within ```ACE Quick Access Links```.
+
+Ideal candidates are links that are logically related to each other, such as **Benefits Systems** (links to Paystub, Time & Expense, Vacation, etc.) or **Helpdesk Systems** (links to open tickets, check on tickets, etc.).
+
+You can create multiple SharePoint Lists and a seperate ```ACE Quick Access Links``` card for each, giving you many ways to combine links and organize your dashboard.
+
+# Solution Components
+
+The solution consists of two components: The *Quick Access Links Adaptive Card Extension* and the *Quick Access Links SharePoint List*.
+
+## The Quick Access Links Adaptive Card Extension
+
+This Adaptive Card Extension (ACE) provides the user interface and simple business logic required to render the initial card and links in the Viva Connections Dashboard.
+
+## The Quick Access Links SharePoint List
+
+This SharePoint List stores the link data for and individual Quick Access Links Adaptive Card Extension instance. It contains columns for link title, subtitle, action button URL, action button text, sort order, and an image for the link.
 
 
 
 # Installation
+
+Installation of ```ACE Quick Access Links``` has the following steps:
+
+* Confirm all ```required``` prerequisites.
+* Install the SharePoint Solution package.
+* Create at least one SharePoint List in a SharePoint site configured as your organization's Home Site.
+* Configure the Quick Access Links card in your Viva Connections Dashboard.
+
+## Prerequisites
+
+* ```Required``` Your organization's intranet is in SharePoint.
+* ```Required``` Your organization has configured a [Home Site](https://learn.microsoft.com/en-us/viva/connections/home-site-plan).
+
+**Important:** It is *theoretically* possible to install this solution into SharePoint Server (on-premises) but this scenario has **not** been tested. Proceed at your own time and expense.
+
+## Install the ```ACE Quick Access Links``` Solution Package
+
+**NOTE:** You will need to be a member of the [SharePoint Administrator Role](https://learn.microsoft.com/en-us/sharepoint/sharepoint-admin-role) to perform this step.
+
+## Create the ```ACE Quick Access Links``` SharePoint List
+
+**NOTE:** You will need to be a member of the [SharePoint Site Collection Administrators Group](https://learn.microsoft.com/en-us/sharepoint/manage-site-collection-administrators) for your [Viva Connections Home Site](https://learn.microsoft.com/en-us/viva/connections/home-site-plan) to perform this step.
+
+## Configure the ```ACE Quick Access Links``` Card in Viva Connections Dashboard
+
+**NOTE:** You will need to be a member of the [SharePoint Site Collection Administrators Group](https://learn.microsoft.com/en-us/sharepoint/manage-site-collection-administrators) for your [Viva Connections Home Site](https://learn.microsoft.com/en-us/viva/connections/home-site-plan) to perform this step.
+
+At this point, you should have successfully installed the SharePoint Solution Package and created a Quick Access Links List in SharePoint.
+
+# Installation
+
+
+
+
 
 ## Install the Solution Package
 
