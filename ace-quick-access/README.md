@@ -26,7 +26,7 @@ This Adaptive Card Extension (ACE) provides the user interface and simple busine
 
 This SharePoint List stores the link data for and individual Quick Access Links Adaptive Card Extension instance. It contains columns for link title, subtitle, action button URL, action button text, sort order, and an image for the link.
 
-
+![Image of The Quick Access Links List in SharePoint Online with sample data.](https://raw.githubusercontent.com/TylerDurham/st-viva-connections-extensions/master/ace-quick-access/sharepoint/assets/ace-splist1.png?token=GHSAT0AAAAAAB54CR6B3HJBDV5Q3YJJ46H4ZAUYOLA)
 
 # Installation
 
